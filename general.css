@@ -8,15 +8,40 @@ body{
   background: radial-gradient(circle, #5f0f77 0%, #7b2097 5%, #000000 10% );
   animation: BackgroundAnimation 10s alternate infinite;
   animation-timing-function: linear;
+
+
 }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: grey
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: grey
+  }
 
 
 @keyframes BackgroundAnimation {
   0% {
+    
     background-position: center;
     background-size: 90%;
   }
   100% {
+    
     background-position: 50% 50%;
     background-size: 130%;
     

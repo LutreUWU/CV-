@@ -1,0 +1,96 @@
+.DescriptionDiv{
+  margin-top: 5%;
+  margin-left: 25vw;
+  
+  
+  background-color: rgba(23, 97, 158, 0.452);
+  border-left: 20px solid purple;
+  border-radius: 5px;
+  transform: skewX(10deg);
+  box-shadow:  10px 8px 100px #0859b6;
+   
+  animation: pop 1.5s forwards;
+  overflow-y: scroll;
+  
+}
+
+@keyframes pop {
+  0%{
+   height: 0vh;
+   width: 0vw;
+  }
+
+  50%{
+    height: 40vh;
+    width: 0vw;
+  }
+
+  70%{
+    height: 40vh;
+    width: 50vw;
+  }
+
+  100%{
+    height: 40vh;
+    width: 50vw;
+  }
+}
+
+
+.Description{
+  transform: skewX(-10deg);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+ 
+}
+
+
+
+
+
+
+.DescriptionText{
+  margin: 0;
+  display: grid;
+  grid-template-columns: 80% 20%; 
+  transform: skewX(-10deg);  
+  margin: 1vw;
+  
+}
+
+.DescriptionTitle{
+  font-family: Caveat;
+  color: white;
+  font-size: 3.5em;
+  margin: 0;
+ 
+}
+
+.TextWho{
+ font-family: Roboto;
+ font-weight: 500px;
+ font-style: italic;
+ text-align: center;
+ font-size: 1.2em;
+}
+
+.ImageWho{
+  border: solid 2px whitesmoke;
+  border-radius: 30px;
+}
+.opacity{
+  animation: opacity 0.5s both;
+  animation-delay: 1.5s ;
+}
+
+@keyframes opacity {
+  
+  from{
+    opacity: 0;
+  }
+
+  to{
+    opacity: 1;
+  }
+}

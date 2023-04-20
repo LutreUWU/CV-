@@ -5,20 +5,27 @@
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="head.css">
     <link rel="stylesheet" href="spark.css">
+    <link rel="stylesheet" href="Description.css">
 
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,500&display=swap" rel="stylesheet">
   </head>
 
+  
   <body>
-    <div class="buttonDiv" id="ButtonDiv">
+    
+      <div class="buttonDiv" id="ButtonDiv">
       <button class="start" id="startbutton">Click ...</button>
 
     </div>
-
+    
     <script>
       let video = document.createElement('video');
       audiosongIntro = new Audio ('Introvideo/intro.mp3');
@@ -68,20 +75,72 @@
       <span class="Title" >Welcome !</span>
     </div>
     <div class="menu">
-      <button class="menu-button">Qui suis-je</button>
-      <button class="menu-button">Mes projets</button>
-      <button class="menu-button">Contacts </button>
+      <button class="menu-button" id="button1">Qui suis-je</button>
+      <button class="menu-button" id="button2">Mes projets</button>
+      <button class="menu-button" id="button3">Contacts </button>
+    </div>
+    
+    
+    <div style="display: none" id="div1">
+      <div class="opacity">
+                <div class="Description ">
+                  <h1 class="DescriptionTitle"> Qui suis-je </h1>
+                </div>
+                <div class="DescriptionText ">
+                  <div class="TextWho ">
+                    <p>Salut, je m'appelle David j'ai 18ans et depuis 2023 j'ai commencé le développement web en regardant des vidéos Youtube !</p>
+                    <p>Le développement web est un domaine qui me fascine et je souhaite pouvoir en faire mon métier dans l'avenir ! Pourquoi ? Car c'est un domaine où tu es libre de créer ce que tu veux ! le web te permet une grande liberté d'expression créative en utilisant des combinaisons de couleurs, de formes, de typographies, etc.</p>
+                 
+                    <p>J'adore les animés, la natation, les jeux videos, la musique J-Pop ! Toutes ces passions me permettent de trouver l'inspiration et la motivation de créer des sites webs ! Peu importe les difficultés à surmonter. C'est ce qui me permet de prendre du plaisir à coder des sites webs. </p>
+                    <p>Je m'instruis tout en m'amusant, c'est incroyable non ? </p>
+
+                   
+                  </div>
+                  <div>
+                    <img class="ImageWho" src="mordred-mordredspin.gif">
+                  </div>
+                </div>
+                
+                <div class="Description" >
+                  <h1 class="DescriptionTitle" style="font-size: 2em;">Quelle est mon objectif en créant ces sites webs ?</h1>
+                </div>
+                  <div class="TextWho " >
+                      <p>Valoriser l'image des gens qui regardent/lisent des animés/mangas et faire découvrir mes animés à des gens. </p>
+                    
+                    </div>
+
+                
+                 
+              
+              </div>
     </div>
    
     
   </div>
+
+
+  <script>
+    const bouton1 = document.getElementById("button1");
+    const bouton2 = document.getElementById("button2");
+    const bouton3 = document.getElementById("button3");
+   
+    const div1 = document.getElementById("div1");
+   
+
+    
+    bouton1.addEventListener("click", function() {
+      div1.style.display = "block";
+      div1.classList.add("DescriptionDiv")
+      
+});
+  </script>
 
   <script>
     var Sparkles = [];
     SparkleBackground = document.getElementById("SparkleDiv")
 
     function generateSparkle() {
-      for (var i = 0; i < 100; i++) {
+      for (var i = 0; i < 50; i++) {
         var size = Math.random() * 30 + 10; // Taille aléatoire entre 30 et 40
         var duration = Math.random() * 10 + 10; // Durée de chute aléatoire entre 10 et 15 secondes
         topPX = Math.random() * window.innerHeight;
@@ -107,13 +166,6 @@
      }
 
      generateSparkle();
-
-
-    
-      
-
-
-   
   </script>
 
 </body>
