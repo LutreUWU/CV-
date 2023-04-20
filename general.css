@@ -1,0 +1,50 @@
+
+body{
+  width:100vw;
+  height: 100vh;
+  margin: 0;
+  
+  background-color: black;
+  background: radial-gradient(circle, #5f0f77 0%, #7b2097 5%, #000000 10% );
+  animation: BackgroundAnimation 10s alternate infinite;
+  animation-timing-function: linear;
+}
+
+
+@keyframes BackgroundAnimation {
+  0% {
+    background-position: center;
+    background-size: 90%;
+  }
+  100% {
+    background-position: 50% 50%;
+    background-size: 130%;
+    
+  }
+ 
+}
+.buttonDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  
+}
+.start{
+  padding: 20px;
+  background-color: transparent;
+  border: solid 2px white;
+  border-radius: 30px;
+
+  font-family: Caveat;
+  font-size: 30px;
+  transition: all 0.5s;
+}
+
+.start:hover{
+  cursor: pointer;
+  background-color: white;
+  color: grey;
+  transform: scale(1.1);
+}

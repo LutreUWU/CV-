@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+  <head>
+      <title>Projet 2, Présentation</title>
+    <link rel="stylesheet" href="Introvideo/Intro.css">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="head.css">
+    <link rel="stylesheet" href="spark.css">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="buttonDiv" id="ButtonDiv">
+      <button class="start" id="startbutton">Click ...</button>
+
+    </div>
+
+    <script>
+      let video = document.createElement('video');
+      audiosongIntro = new Audio ('Introvideo/intro.mp3');
+      audiosongIntro.volume = 0.3
+      AllDiv = document.getElementById("allDiv")
+      buttonStart = document.getElementById("startbutton")
+      buttonParent = document.getElementById("ButtonDiv")
+
+      video.setAttribute('id', 'OpenSiteVideo');
+      videoIntro = document.getElementById("OpenSiteVideo")
+      
+      video.src = 'Introvideo/Site-projet-2.mp4';
+      video.classList.add("video-edit")
+
+      buttonStart.addEventListener("click",function(){
+        document.body.appendChild(video);
+        video.play();
+        audiosongIntro.play();
+
+        setTimeout(function(){
+          audiosongIntro.volume = 0.2
+        }, 30000)
+
+        setTimeout(function(){
+          audiosongIntro.volume = 0.1
+        }, 31000)
+
+        video.addEventListener("ended",function(){
+          document.body.removeChild(video)
+          audiosongIntro.loop = true;
+          
+          allDiv.style.display = "block";
+          document.body.removeChild(ButtonDiv)
+
+          setTimeout(function(){
+            allDiv.style.opacity = 1;
+          }, 2500)
+      })
+      })
+      
+    </script>
+  <div style="opacity: 0; display:none;transition: all 2.5s;" id="allDiv">
+    <div class="SparkleDiv" id="SparkleDiv">
+    </div>
+   
+    <div class="head">
+      <span class="Title" >Welcome !</span>
+    </div>
+    <div class="menu">
+      <button class="menu-button">Qui suis-je</button>
+      <button class="menu-button">Mes projets</button>
+      <button class="menu-button">Contacts </button>
+    </div>
+   
+    
+  </div>
+
+  <script>
+    var Sparkles = [];
+    SparkleBackground = document.getElementById("SparkleDiv")
+
+    function generateSparkle() {
+      for (var i = 0; i < 100; i++) {
+        var size = Math.random() * 30 + 10; // Taille aléatoire entre 30 et 40
+        var duration = Math.random() * 10 + 10; // Durée de chute aléatoire entre 10 et 15 secondes
+        topPX = Math.random() * window.innerHeight;
+        rightPX = Math.random() * window.innerWidth;
+
+        var SparkleImages = ["sparkle2.png", "sparkle.png"];
+        var randomNumber = Math.random();
+        var imageUrl = SparkleImages[Math.floor(randomNumber * SparkleImages.length)];
+
+        var Sparkle = document.createElement("img");
+             Sparkle.src = imageUrl;
+             Sparkle.classList.add("Sparkle");
+             Sparkle.style.width = size + "px"
+             Sparkle.style.top = topPX + "px"
+             Sparkle.style.right = rightPX + "px"
+             Sparkle.style.animationDuration = duration + "s";
+
+             Sparkles.push(Sparkle);
+             SparkleBackground.appendChild(Sparkle);
+
+    } 
+    
+     }
+
+     generateSparkle();
+
+
+    
+      
+
+
+   
+  </script>
+
+</body>
