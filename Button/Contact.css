@@ -1,0 +1,42 @@
+.DescriptionDivContacts{
+  margin-top: 5%;
+  margin-left: 25vw;
+  margin-right:25vw;
+  
+  background-color: rgba(92, 11, 117, 0.452);
+  border-left: 20px solid purple;
+  border-radius: 5px;
+  transform: skewX(10deg);
+  box-shadow: 10px 8px 100px #840dbb;
+   
+  animation: pop 1.5s forwards;
+  overflow-y: scroll;
+  
+}
+
+.depop{
+  animation: depop 1.5s forwards
+}
+
+@keyframes depop {
+  0%{
+    height: 40vh;
+    width: 50vw;
+   
+  }
+
+  50%{
+    width: 0vw;
+    height: 40vh;
+  }
+
+  60%{
+    height: 40vh;
+    
+  }
+
+  100%{
+    height: 0vh;
+    width: 0vw;
+  }
+}

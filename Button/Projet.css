@@ -1,0 +1,73 @@
+.DescriptionDivProjet{
+  margin-top: 5%;
+  margin-left: 25vw;
+  margin-right: 25vw;
+  
+  background-color: rgba(11, 117, 46, 0.452);
+  border-left: 20px solid purple;
+  border-radius: 5px;
+  transform: skewX(10deg);
+  box-shadow: 10px 8px 100px #0a9c36;
+   
+  animation: pop 1.5s forwards;
+  overflow-y: scroll;
+  
+}
+
+.depop{
+  animation: depop 1.5s forwards
+}
+
+@keyframes depop {
+  0%{
+    height: 40vh;
+    width: 50vw;
+   
+  }
+
+  50%{
+    width: 0vw;
+    height: 40vh;
+  }
+
+  60%{
+    height: 40vh;
+    
+  }
+
+  100%{
+    height: 0vh;
+    width: 0vw;
+  }
+}
+
+.FateLink:hover{
+  color:purple;
+  text-decoration: underline;
+  cursor: pointer;
+  
+}
+
+.ChessProjets{
+  width: 20%;
+  
+  transition: all 0.5s;
+  animation: rotate 3s alternate infinite ease-in-out ;
+  position: absolute;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(15deg);
+  }
+
+  100%{
+    transform: rotate(10deg);
+  }
+
+ 
+}
+
+.ChessProjets:hover{
+  width: 21%;
+}

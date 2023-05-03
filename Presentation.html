@@ -2,10 +2,12 @@
   <head>
       <title>Projet 2, Présentation</title>
     <link rel="stylesheet" href="Introvideo/Intro.css">
-    <link rel="stylesheet" href="general.css">
-    <link rel="stylesheet" href="head.css">
-    <link rel="stylesheet" href="spark.css">
-    <link rel="stylesheet" href="Description.css">
+    <link rel="stylesheet" href="General/general.css">
+    <link rel="stylesheet" href="General/head.css">
+    <link rel="stylesheet" href="General/spark.css">
+    <link rel="stylesheet" href="Button/Description.css">
+    <link rel="stylesheet" href="Button/Projet.css">
+    <link rel="stylesheet" href="Button/Contact.css">
 
 
 
@@ -20,11 +22,12 @@
 
   
   <body>
-    
+    <!--
       <div class="buttonDiv" id="ButtonDiv">
       <button class="start" id="startbutton">Click ...</button>
 
     </div>
+    -->
     
     <script>
       let video = document.createElement('video');
@@ -67,7 +70,7 @@
       })
       
     </script>
-  <div style="opacity: 0; display:none;transition: all 2.5s;" id="allDiv">
+  <div style="opacity: 1; display:block;transition: all 2.5s;" id="allDiv">
     <div class="SparkleDiv" id="SparkleDiv">
     </div>
    
@@ -114,6 +117,110 @@
               
               </div>
     </div>
+
+    <div style="display: none" id="div2">
+      <div class="opacity">
+                <div class="Description ">
+                  <h1 class="DescriptionTitle"> Mes Projets</h1>
+                </div>
+                <div class="DescriptionText ">
+                  
+                  <div class="TextWho ">
+                    <h2 class="DescriptionTitle" style="font-size: 1.5em;"> 1er Projet : <span style="color: darkred;">Fate</span></h2>
+                    <p>Un site qui t'introduit à la série Fate en y présentant son histoire ainsi que ces personnages : </p>
+                    <p class="FateLink" id="linkFate" style="transition: all 0.2s;">https://github.com/LutreUWU/Fate/tree/main</p>
+                    
+                    <script>
+                      linkFate = document.getElementById("linkFate")
+                      linkFate.addEventListener("click",function(){
+                        window.open("https://github.com/LutreUWU/Fate/tree/main", "_blank");
+
+                      })
+                    </script>
+
+                    
+                  </div>
+                  <div>
+                    <img class="ChessProjets" src="Echec.png">
+                  </div>
+                  
+                </div>
+                
+                <div class="DescriptionText ">
+                  
+                  <div class="TextWho ">
+                    <h2 class="DescriptionTitle" style="font-size: 1.5em;"> 2ème Projet : <span style="color: purple;">Ce site là</span></h2>
+                    <p>Un site qui me présente, qui je suis, mes projets et les moyens de me contacter :</p>
+                    <p class="FateLink" id="linkCV" style="transition: all 0.2s;">https://github.com/LutreUWU/CV-</p>
+                    
+                    <script>
+                      linkCV = document.getElementById("linkCV")
+                      linkCV.addEventListener("click",function(){
+                        window.open("https://github.com/LutreUWU/CV-", "_blank");
+
+                      })
+                    </script>
+
+                   
+                  </div>
+                  
+                  
+                  
+                </div>
+          
+
+                
+                 
+              
+              </div>
+    </div>
+
+    <div style="display: none" id="div3">
+      <div class="opacity">
+                <div class="Description ">
+                  <h1 class="DescriptionTitle"> Contacts</h1>
+                </div>
+                <div style="display: grid;  grid-template-columns: 70% 30%; margin-right: 10%;">
+                      <div class="DescriptionText ">
+                        <div class="TextWho ">
+                          <div style="display: flex; align-items: center; justify-content: center; margin-top: 1vh;">
+                            <img src="logo/gmail.png" style="width:4%;margin-right: 0.2vw;">
+                            <span style="color:whitesmoke"> davidliv6@gmail.com </span>
+                          </div>
+
+                          <div style="display: flex; align-items: center; justify-content: center; margin-top: 1vh;">
+                            <img src="logo/github.png" style="width:8%;margin-right: 0.2vw">
+                            <span style="color:rgb(83, 86, 87)"> LutreUWU </span>
+                          </div>
+
+                          <div style="display: flex; align-items: center; justify-content: center; margin-top: 1vh;">
+                            <img src="logo/twitter.png" style="width:4%;margin-right: 0.2vw">
+                            <span style="color:rgb(13, 154, 197)"> @DavidNoBaka </span>
+                          </div>
+
+                          <div style="display: flex; align-items: center; justify-content: center; margin-top: 1vh;">
+                            <img src="logo/discord.png" style="width:4%;margin-right: 0.2vw;">
+                            <span style="color:rgb(58, 6, 204)"> Davideuh#4537 </span>
+                          </div>
+                          
+                      
+                      
+
+                        
+                        </div>
+                        
+                      </div>
+                      <div>
+                        <img class="ImageWho" style="width: 10vw; transform: skewX(-10deg);" src="Nero.jpg">
+                      </div>
+                </div>      
+               
+
+                
+                 
+              
+              </div>
+    </div>
    
     
   </div>
@@ -125,15 +232,74 @@
     const bouton3 = document.getElementById("button3");
    
     const div1 = document.getElementById("div1");
+    const div2 = document.getElementById("div2");
+    const div3 = document.getElementById("div3");
    
 
     
     bouton1.addEventListener("click", function() {
-      div1.style.display = "block";
-      div1.classList.add("DescriptionDiv")
+      div1.classList.remove("depop")
+      div2.classList.add("depop")
+      div3.classList.add("depop")
       
-});
-  </script>
+      
+      setTimeout(() => {
+        div1.style.display = "block";
+         div1.classList.add("DescriptionDiv")
+        
+        div2.style.display = "none";
+        div2.classList.remove("DescriptionDivProjet")
+        div3.style.display = "none";
+        div3.classList.remove("DescriptionDivContacts")
+
+    }, 1500)
+
+    });
+
+    bouton2.addEventListener("click", function() {
+      
+      div1.classList.add("depop")
+      div2.classList.remove("depop")
+      div3.classList.add("depop")
+      
+      setTimeout(() => {
+        div1.style.display = "none";
+        div1.classList.remove("DescriptionDiv")
+
+        div3.style.display = "none";
+        div3.classList.remove("DescriptionDivContacts")
+
+        div2.style.display = "block";
+      div2.classList.add("DescriptionDivProjet")
+        }, 1500)
+     
+      
+      
+      
+      
+     
+    });
+
+    bouton3.addEventListener("click", function() {
+      div1.classList.add("depop")
+      div2.classList.add("depop")
+      div3.classList.remove("depop")
+      
+      
+
+      setTimeout(() => {
+        
+        div1.style.display = "none";
+        div1.classList.remove("DescriptionDiv")
+        div2.style.display = "none";
+        div2.classList.remove("DescriptionDivProjet")
+
+        div3.style.display = "block";
+      div3.classList.add("DescriptionDivContacts")
+
+    }, 1500)
+    });
+      </script>
 
   <script>
     var Sparkles = [];
